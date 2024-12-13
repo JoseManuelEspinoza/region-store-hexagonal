@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+costa:
+  id: 1
+  name: Costa
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+sierra:
+  id: 2
+  name: Sierra
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+selva:
+  id: 3
+  name: Selva
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>

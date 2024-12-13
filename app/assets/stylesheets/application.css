@@ -1,0 +1,209 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+.flash {
+    padding: 10px;
+    margin-bottom: 15px;
+    display: 'none';
+}
+
+.flash.notice {
+    background-color: green;
+    color: white;
+}
+
+.flash.alert {
+    background-color: red;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilo por defecto del botón */
+.btn-primary {
+    background-color: blue;
+    /* Azul por defecto */
+    color: black;
+    /* Letras blancas por defecto */
+    border-color: #007bff;
+    /* Color del borde igual al color de fondo */
+}
+
+/* Estilo del botón al hacer hover */
+.btn-primary:hover {
+    background-color: #007bff;
+    /* Blanco al hacer hover */
+    color: black;
+    /* Letras negras al hacer hover */
+}
+
+.custom-btn {
+    border: 2px solid #17E010;
+    /* Borde claro */
+    background-color: #01990e;
+    /* Interior oscuro */
+    text-align: center;
+    /* Centrar el texto */
+    border-radius: 5px;
+    /* Bordes redondos */
+}
+
+.custom-btn:hover {
+    background-color: #17E010;
+    /* Fondo verde al hacer hover */
+}
+
+
+
+
+
+/* Estilos personalizados */
+.custom-button {
+    border-radius: 20px;
+    /* Bordes redondeados */
+    padding: 10px 20px;
+    /* Ajusta el espaciado interno */
+    background-color: #87CEEB;
+    /* Color celeste claro */
+    border-color: #87CEEB;
+    /* Color del borde */
+    color: #fff;
+    /* Color del texto */
+}
+
+.custom-button:hover {
+    background-color: #007bff;
+    /* Color azul al hacer hover */
+    border-color: #007bff;
+    /* Color del borde al hacer hover */
+}
+
+.custom-btn:hover {
+    background-color: #00cc00;
+    /* Verde claro */
+}
+
+
+.relleno-Botton {
+    background-color: #4e8bff;
+    /* Azul claro */
+    max-width: 150px;
+}
+
+.ingresar {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    /* Color de fondo sólido */
+    color: black;
+    font-weight: bold;
+    transition: background-color 0.1s;
+}
+
+.ingresar:hover {
+    background-color: blue;
+    /* Cambiar el color de fondo al pasar el cursor sobre el botón */
+}
+
+/*para crear el formulario de crear cuenta*/
+.Crear-Cuenta {
+    position: absolute;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: #D8EBFA;
+    /* Color de fondo D8EBFA */
+    border-radius: 20px;
+}
+
+
+.Crear-Cuenta h2 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    /* Tamaño de letra */
+    font-weight: bold;
+    padding: 0 0 20px 0;
+    color: black;
+}
+
+.Crear-Cuenta form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.Formulario-session {
+    position: absolute;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    background: #D8EBFA;
+    border-radius: 20px;
+}
+
+.Formulario-session h2 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    /* Tamaño de letra */
+    font-weight: bold;
+    padding: 0 0 20px 0;
+    color: black;
+}
+
+.Formulario-session form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+/*para las regiones*/
+.all {
+    background-image: url('all.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.region-costa {
+    background-image: url('costa.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.region-sierra {
+    background-image: url('sierra.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.region-selva {
+    background-image: url('selva.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.region {
+    background-size: cover;
+    background-position: center;
+}

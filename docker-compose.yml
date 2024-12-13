@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: RootAdmin*
+      POSTGRES_DB: tienda_regional_development
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: always
+
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails server -b '0.0.0.0' -p 3000"
+    volumes:
+      - ".:/rails"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://postgres:RootAdmin*@db:5432/tienda_regional_development
+    restart: always

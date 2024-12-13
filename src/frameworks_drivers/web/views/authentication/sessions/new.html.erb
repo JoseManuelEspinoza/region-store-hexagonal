@@ -1,0 +1,40 @@
+
+<div class="Container">
+  <div>
+    <%= link_to productos_path do %>
+      <%= image_tag 'icons/volver.svg', width: 35, height: 35, alt: 'Ver productos' %>
+    <%end%>
+  </div>
+  <div class="Formulario-session" style="display: block">
+    <%= form_with(url: sessions_path, id: "Form_inicio_sesion") do |form| %>
+    <br>
+      <h2>Inicia sesión</h2>
+      <div class="usuario">
+        <%= form.label :login, "Cuenta de usuario" %>
+        <%= form.text_field :login, id: "cuenta", class: "form-control", required: true %>
+      </div>
+      <div class="usuario">
+        <%= form.label :password, "Contraseña" %>
+        <%= form.password_field :password, id: "password", class: "form-control", required: true %>
+      </div>
+      <br>
+      <div class="recuerdame">
+        <%= form.check_box :recuerdame, id: "recuerdame" %>
+        <%= form.label :recuerdame, "Recuerdame" %>
+      </div>
+      <br>
+      <%= form.submit "Iniciar sesión", id: "enviar", class: "ingresar" %>  
+      <br><br>
+    <% end %>
+    <%= form_tag '#', method: :post do %>
+      <div class="Registrar">
+        ¿No tiene cuenta registrada?
+        <%= link_to new_user_path, class: 'Registrar', id: 'Registrar' do %>
+          <strong>Registrar ahora</strong>
+        <% end %>
+      </div>
+    <% end %>
+    <br><br>
+  </div>
+
+</div>

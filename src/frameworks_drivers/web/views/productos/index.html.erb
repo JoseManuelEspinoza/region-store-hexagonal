@@ -1,0 +1,34 @@
+<%= turbo_frame_tag 'home' do %>
+
+  <div class="flex justify-between items-center bg-blue-500 px-2">
+
+    <div class="flex overflow-x-scroll gap-2 my-4" style="margin-left: 10%;" >
+      <%= link_to productos_path, class: 'all bg-white rounded-lg drop-shadow-sm hover:bg-gray-300 flex items-center justify-center relative', style: "width: 200px; height: 200px;" do %>
+        <div style="color: white; font-weight: bold; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+          Todos
+        </div>
+      <% end %>
+
+      <% @regions.each do |region| %>
+        <%= link_to productos_path(region_id: region.id), class: "region-#{region.name.downcase.parameterize} bg-white text-gray-600 px-4 py-2 rounded-lg drop-shadow-sm hover:bg-gray-300 flex items-center justify-center", style: "width: 200px; height: 200px;" do %>
+          <div style="color: white; font-weight: bold; text-align: center;">
+            <%= region.name %>
+          </div>
+        <% end %>
+      <% end %>
+
+    </div>
+
+    <%= form_with url: productos_path, method: :get, class: "w-1/7" do |form| %>
+      <%= form.select :order_by, options_for_select([["Recientes", "newest"], ["Más Caros", "expensive"], ["Más Baratos", "cheapest"]], params[:order_by]), {}, {onchange: 'this.form.requestSubmit()', class: "w-full rounded-2xl border-gray-200 text-gray-500"} %>
+    <% end %>
+  </div>
+
+  <%= turbo_frame_tag 'productos', class: "flex flex-col m-2" do %>
+    <%= turbo_frame_tag "productos-#{@pagy.page}", class: 'productos flex flex-col w-full sm:flex-row sm:flex-wrap sm:gap-x-2' do %>
+      <%= render partial: 'producto', collection: @productos %>
+      <%= turbo_frame_tag "productos-#{@pagy.next}", class: 'productos flex flex-col w-full sm:flex-row sm:flex-wrap sm:gap-x-2', src: pagy_url_for(@pagy, @pagy.next), loading: :lazy if @pagy.next %>
+    <% end %>
+  <% end %>
+
+<% end %>

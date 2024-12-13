@@ -1,0 +1,44 @@
+<div class="Container">
+  <div>
+    <%= link_to sessions_path do %>
+      <%= image_tag 'icons/volver.svg', width: 35, height: 35, alt: 'Ver productos' %>
+    <%end%>
+  </div>
+  <div
+      class="Crear-Cuenta"
+      id="crear-cuenta"
+    >
+    <br>
+    <h2>Registrar cuenta</h2>
+    <%= form_with(model: @user) do |form| %>
+        <div class="usuario">
+          <%= form.label :email %>
+          <%= form.email_field :email, class: "form-control", required: true %>
+          <% if @user.errors[:email].any? %>
+            <div class="error-message"><%= @user.errors[:email].first %></div>
+          <% end %>
+        </div>
+      
+        <div class="usuario" >
+          <%= form.label :username %>
+          <%= form.text_field :username, class: "form-control", required: true %>
+          <% if @user.errors[:username].any? %>
+            <div class="error-message"><%= @user.errors[:username].first %></div>
+          <% end %>
+        </div>
+      
+        <div class="usuario" >
+          <%= form.label :password %>
+          <%= form.password_field :password, class: "form-control", required: true %>
+          <% if @user.errors[:password].any? %>
+            <div class="error-message"><%= @user.errors[:password].first %></div>
+          <% end %>
+        </div>
+        <%= form.hidden_field :admin, value: false %>
+        <br>
+        <%= form.submit "REGISTRAR CUENTA", id: "enviar", class: "ingresar" %>
+        <br><br>
+        
+    <% end %>
+  </div>
+</div>

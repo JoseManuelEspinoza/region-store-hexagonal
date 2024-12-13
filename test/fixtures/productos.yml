@@ -1,0 +1,17 @@
+cafe_altura:
+  id: 1
+  titulo: Café de altura
+  description: Granos de café cultivados en las alturas de la sierra
+  price: 25
+  region_id: 1
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+queso_maduro:
+  id: 2
+  titulo: Queso maduro
+  description: Queso artesanal envejecido con un sabor excepcional
+  price: 15
+  region_id: 2
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>

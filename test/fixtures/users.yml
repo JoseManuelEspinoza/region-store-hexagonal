@@ -1,0 +1,17 @@
+juan:
+  id: 1
+  email: juan@regionalstore.com
+  username: Juan
+  password_digest: <%= BCrypt::Password.create('juan D').to_s %>
+  admin: true
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+david:
+  id: 2
+  email: david@regionalstore.com
+  username: David
+  password_digest: <%= BCrypt::Password.create('david*').to_s %>
+  admin: false
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>

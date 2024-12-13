@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+pago_1:
+  uid: fsgddfdsfsdf
+  estado: 1
+  metodo_pago: 1
+  monto: 9.99
+  mensaje_error: MyText
+  datos_respuesta: {}
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+pago_2:
+  uid: sdfsdfsdf
+  estado: 1
+  metodo_pago: 1
+  monto: 9.99
+  mensaje_error: MyText
+  datos_respuesta: {}
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
